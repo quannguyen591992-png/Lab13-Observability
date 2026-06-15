@@ -44,9 +44,15 @@ python scripts/load_test.py --concurrency 5
 # Inject failures live
 python scripts/inject_incident.py --scenario rag_slow
 
+# Disable injected failures
+python scripts/inject_incident.py --scenario rag_slow --disable
+
 # Check your implementation progress
 python scripts/validate_logs.py
 ```
+
+For the lightweight lab dashboard, use `/metrics` with the 6-panel checklist in `docs/local-dashboard.md`.
+Incident toggle audit events are written to `data/audit.jsonl`.
 
 ## Repo map
 

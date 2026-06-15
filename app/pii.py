@@ -5,10 +5,11 @@ import re
 
 PII_PATTERNS: dict[str, str] = {
     "email": r"[\w\.-]+@[\w\.-]+\.\w+",
-    "phone_vn": r"(?:\+84|0)[ \.-]?\d{3}[ \.-]?\d{3}[ \.-]?\d{3,4}", # Matches 090 123 4567, 090.123.4567, etc.
-    "cccd": r"\b\d{12}\b",
     "credit_card": r"\b\d{4}[- ]?\d{4}[- ]?\d{4}[- ]?\d{4}\b",
-    # TODO: Add more patterns (e.g., Passport, Vietnamese address keywords)
+    "cccd": r"\b\d{12}\b",
+    "phone_vn": r"\b(?:\+84|0)[ \.-]?\d{2}[ \.-]?\d{3}[ \.-]?\d{4}\b",
+    "passport": r"\b[A-Z][0-9]{7,8}\b",
+    "address_hint": r"\b(?:street|road|district|ward|phường|quận|đường|hẻm)\s+[\w\s,.-]{1,60}",
 }
 
 
